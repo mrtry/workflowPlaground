@@ -1,0 +1,12 @@
+name: 'test'
+on:
+  pull_request:
+    types:
+      - opened
+jobs:
+  create-tag:
+    runs-on: ubuntu-latest
+    if: startsWith(github.event.pull_request.head.ref, 'release/')
+    steps:
+      - run: echo "hello, world"
+
